@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&family=Inter&display=swap');
+@import 'bootstrap/scss/bootstrap';
+@import "./vars";
+@import "./Components/Header/navbar";
+@import "./Components/Header/header";
+@import "./Components/Home/home";
+@import "./Components/Home/slide";
+@import "./Components/Header/navbarMobile";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri';
+    font-family: 'Inter';
+}

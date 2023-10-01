@@ -1,0 +1,42 @@
+.nav_bg {
+    background: transparent
+}
+
+.nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0 20%;
+
+    .logo {
+        height: 70px;
+        width: 170px;
+    }
+
+    .nav_link_container {
+
+        .nav_link {
+            text-decoration: none;
+            margin-left: 2rem;
+            color: black;
+
+            &:hover {
+                color: $color-1;
+                border-bottom: 1px solid $color-1;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .nav_container {
+        margin: 0 5%;
+    }
+
+    .nav_link_container {
+        display: none;
+    }
+}

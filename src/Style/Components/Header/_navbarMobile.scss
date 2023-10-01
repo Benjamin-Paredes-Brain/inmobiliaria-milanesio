@@ -1,0 +1,64 @@
+.mobileNav_container {
+    display: none;
+}
+
+.mobile_burgerIcon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .mobile_burgerIcon {
+        display: block;
+        color: red;
+        font-size: 20px;
+    }
+
+    .modal_containerNav {
+        position: fixed;
+        background-color: $color-2;
+        top: 0;
+        left: 0;
+        width: calc(100% / 1.5);
+        min-height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+
+        .mobileNav_container {
+            display: block;
+
+            .navbarMobile {
+                display: flex;
+                flex-direction: column;
+
+                .navbar_linkMobile {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $color-3;
+                    padding: 1rem;
+                    border-top: 1px solid $color-1;
+                }
+            }
+        }
+    }
+
+    .modal_activeNav {
+        transform: translateX(0%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .backdrop_activeNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        transition: opacity 0.3s ease-in-out;
+        overflow: hidden;
+    }
+
+
+}
