@@ -6,6 +6,7 @@
 @import "./Components/Home/home";
 @import "./Components/Home/slide";
 @import "./Components/Header/navbarMobile";
+@import "Components/Footer/footer";
 
 * {
     margin: 0;
@@ -13,4 +14,8 @@
     box-sizing: border-box;
     font-family: 'Hind Siliguri';
     font-family: 'Inter';
+}
+
+p {
+    margin-bottom: 0;
 }

@@ -2,6 +2,7 @@ import "./Style/style.scss";
 import { Header } from "./Components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Home } from "./Components/Home/Home";
+import { Footer } from "./Components/Footer/Footer";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route></Route>
       </Routes>
 
+      <Footer />
     </BrowserRouter>
   )
 }

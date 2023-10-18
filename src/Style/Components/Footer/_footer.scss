@@ -1,0 +1,133 @@
+.footer_bg {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: $color-2;
+
+
+    .footer_container {
+        color: $color-3;
+        display: grid;
+        text-align: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0 20%;
+        padding: 1rem;
+
+        .logo_footer {
+            width: 12rem;
+        }
+
+
+        .footer_title {
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .social_container {
+
+            .social_link {
+                color: $color-3;
+                text-decoration: none;
+                margin: 0 0.5rem;
+            }
+
+            .awesome_icon_social:hover {
+                color: $color-1;
+            }
+        }
+
+        .footer_ubi_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: $color-3;
+            margin: 0 1rem;
+
+            .awesome_icon_ubi {
+                color: $color-1;
+                margin-right: 16px;
+                font-size: 16px;
+            }
+
+            .footer_ubi_txt {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .copyright {
+        background-color: $color-1;
+        padding: 1rem;
+        margin-bottom: 0;
+        margin-top: 2rem;
+        text-align: center;
+        color: $color-3;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer_bg {
+
+        .footer_container {
+            margin: 0;
+
+            .footer_title {
+                font-size: 14px;
+            }
+
+            .footer_logo_container {
+                display: flex;
+                align-items: center;
+
+                .logo_footer {
+                    width: 6rem;
+                }
+            }
+
+
+            .social_container {
+
+                .social_link {
+                    margin: 0 5px;
+
+                    .awesome_icon {
+                        font-size: 16px;
+                    }
+                }
+
+                .awesome_icon_social:hover {
+                    color: $color-1;
+                }
+            }
+
+            .footer_ubi_container {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                color: $color-3;
+                margin: 0 4px;
+
+                .awesome_icon_ubi {
+                    color: $color-1;
+                    font-size: 14px;
+                    margin-right: 1px;
+                }
+
+                .footer_ubi_txt {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .copyright {
+            background-color: $color-1;
+            padding: 1rem;
+            margin-bottom: 0;
+            margin-top: 2rem;
+            text-align: center;
+            color: $color-3;
+        }
+    }
+
+}
