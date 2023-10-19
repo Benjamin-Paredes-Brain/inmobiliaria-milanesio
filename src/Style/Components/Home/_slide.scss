@@ -32,12 +32,37 @@
     }
 }
 
+@media screen and (min-width: 768px) {
+    .slide_container {
+
+        .img_slide {
+            height: 550px;
+        }
+
+        .container_info_slide {
+            width: 55%;
+            height: 60%;
+            margin: 0 auto;
+            padding: 1rem;
+
+            .title_slide {
+                font-size: 14px;
+                margin-bottom: 0.5rem;
+            }
+
+            .txt_slide {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .slide_container {
 
         .img_slide {
             height: 350px;
-            width: 100%;
         }
 
         .container_info_slide {

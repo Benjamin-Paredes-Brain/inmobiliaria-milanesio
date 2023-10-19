@@ -41,6 +41,23 @@
     }
 }
 
+@media screen and (min-width: 768px) {
+    .header_container {
+        margin: 0 2%;
+        padding: 10px;
+
+        .awesome_icon {
+            font-size: 1.2rem;
+        }
+
+        .phone_container {
+            .phone_number {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header_container {
         margin: 0;

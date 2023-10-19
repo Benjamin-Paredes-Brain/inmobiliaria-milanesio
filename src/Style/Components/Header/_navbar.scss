@@ -33,6 +33,22 @@
 
 }
 
+@media screen and (min-width: 768px) {
+    .nav_container {
+        margin: 0 5%;
+        padding: 1rem;
+
+        .logo {
+            height: 60px;
+            width: 140px;
+        }
+    }
+
+    .nav_link_container {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .nav_container {
         margin: 0 5%;

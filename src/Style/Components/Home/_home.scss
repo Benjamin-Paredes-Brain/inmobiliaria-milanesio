@@ -36,6 +36,38 @@
     display: none;
 }
 
+
+@media screen and (min-width: 768px) {
+    .cards_home_container {
+        display: none;
+    }
+    
+    .cardsSlideMobile {
+        margin: 0 auto;
+        display: block;
+        height: 270px;
+        width: 650px;
+
+        .cards_home {
+            height: 200px;
+            width: 350px;
+            padding: 1rem;
+            margin: 1rem auto;
+    
+            .cards_home_title {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+    
+            .cards_home_txt {
+                margin: 0;
+                font-size: 16px;
+            }
+        }
+    }
+
+}
+
 @media screen and (max-width: 768px) {
     .cards_home_container {
         display: none;
