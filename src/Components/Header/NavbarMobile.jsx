@@ -25,7 +25,7 @@ export const NavbarMobile = () => {
                         <Link to={"/"} className="navbar_linkMobile">Inicio</Link>
                         <Link to={"/"} className="navbar_linkMobile">Venta</Link>
                         <Link to={"/"} className="navbar_linkMobile">Alquiler</Link>
-                        <Link to={"/"} className="navbar_linkMobile">Servicios</Link>
+                        <Link to={"/servicios"} className="navbar_linkMobile">Servicios</Link>
                         <Link to={"/"} className="navbar_linkMobile">Nosotros</Link>
                         <Link to={"/"} className="navbar_linkMobile">Contacto</Link>
                         
