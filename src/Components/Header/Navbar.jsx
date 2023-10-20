@@ -9,7 +9,7 @@ export const Navbar = () => {
                 <Link to="/"> <img src="/inmobiliaria-milanesio-logo.png" alt="inmobiliaria-milanesio-logo" className="logo" /> </Link>
                 <NavbarMobile />
                 <nav className="nav_link_container">
-                    <Link className="nav_link">Inicio</Link>
+                    <Link to={"/"} className="nav_link">Inicio</Link>
                     <Link className="nav_link">Venta</Link>
                     <Link className="nav_link">Alquiler</Link>
                     <Link to={"/servicios"} className="nav_link">Servicios</Link>
