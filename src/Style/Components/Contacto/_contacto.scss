@@ -1,0 +1,62 @@
+.contacto_banner {
+    height: 30vh;
+    background-image: url("/alto-paz-tower.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .contacto_txt {
+        color: $color-3;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 28px;
+    }
+}
+
+.contacto_container {
+    margin: 0 20%;
+
+    .contacto_title {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .contacto_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .contacto_label {
+            margin: 1rem 0;
+        }
+
+        .contacto_input {
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contacto_button {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+    }
+}

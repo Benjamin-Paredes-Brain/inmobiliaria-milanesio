@@ -27,7 +27,7 @@ export const NavbarMobile = () => {
                         <Link to={"/"} className="navbar_linkMobile">Alquiler</Link>
                         <Link to={"/servicios"} className="navbar_linkMobile">Servicios</Link>
                         <Link to={"/nosotros"} className="navbar_linkMobile">Nosotros</Link>
-                        <Link to={"/"} className="navbar_linkMobile">Contacto</Link>
+                        <Link to={"/contacto"} className="navbar_linkMobile">Contacto</Link>
                         
                     </nav>
                 </div>

@@ -2,8 +2,8 @@ export const Nosotros = () => {
 
     return (
         <>
-            <div className="servicios_banner">
-                <h1 className="servicios_txt">Nosotros</h1>
+            <div className="nosotros_banner">
+                <h1 className="nosotros_txt">Nosotros</h1>
             </div>
 
             <div className="nosotros_container">
