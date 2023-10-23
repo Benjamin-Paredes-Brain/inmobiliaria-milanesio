@@ -1,0 +1,19 @@
+.venta-alquiler_container {
+    margin: 0 20%;
+
+    .venta-alquiler_title {
+        text-align: center;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .venta-alquiler_container {
+        margin: 0 5%;
+    
+        .venta-alquiler_title {
+            margin: 0.5rem;
+        }
+    }
+    
+}

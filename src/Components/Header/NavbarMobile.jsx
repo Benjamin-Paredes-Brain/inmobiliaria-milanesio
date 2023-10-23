@@ -23,8 +23,8 @@ export const NavbarMobile = () => {
                 <div className="mobileNav_container" onClick={handleMenuNavClose}>
                     <nav className="navbarMobile">
                         <Link to={"/"} className="navbar_linkMobile">Inicio</Link>
-                        <Link to={"/"} className="navbar_linkMobile">Venta</Link>
-                        <Link to={"/"} className="navbar_linkMobile">Alquiler</Link>
+                        <Link to={"/venta"} className="navbar_linkMobile">Venta</Link>
+                        <Link to={"/alquiler"} className="navbar_linkMobile">Alquiler</Link>
                         <Link to={"/servicios"} className="navbar_linkMobile">Servicios</Link>
                         <Link to={"/nosotros"} className="navbar_linkMobile">Nosotros</Link>
                         <Link to={"/contacto"} className="navbar_linkMobile">Contacto</Link>
