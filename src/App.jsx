@@ -8,6 +8,7 @@ import { Nosotros } from "./Components/Nosotros/Nosotros";
 import { Contacto } from "./Components/Contacto/Contacto";
 import { Alquiler } from "./Components/Alquiler/Alquiler";
 import { Venta } from "./Components/Venta/Venta";
+import { ItemDetail } from "./Components/Item/ItemDetail";
 
 function App() {
 
@@ -16,12 +17,13 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/servicios" element={<Servicios />}></Route>
-        <Route path="/nosotros" element={<Nosotros />}></Route>
-        <Route path="/contacto" element={<Contacto />}></Route>
-        <Route path="/venta" element={<Venta />}></Route>
-        <Route path="/alquiler" element={<Alquiler />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/servicios" element={<Servicios />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/venta" element={<Venta />} />
+        <Route path="/alquiler" element={<Alquiler />} />
+        <Route path="/propiedad/:itemid" element={<ItemDetail />} />
       </Routes>
 
       <Footer />

@@ -17,9 +17,10 @@ export const ItemListContainer = withItemData(({ loading, itemData }) => {
                         <Loader />
                         :
                         itemData.map((item) => (
-                            // <Link key={item.id} className="items_container" to={`/detail/${item.id}`}>
-                                <div className="item_card">
-                                    <img className="item_img" src={item.portadaPropiedad} alt={item.tipoPropiedad}/>
+                            <div key={item.id} className="item_card">
+                                <Link className="item_link" to={`/propiedad/${item.id}`}>
+
+                                    <img className="item_img" src={item.portadaPropiedad} alt={item.tipoPropiedad} />
                                     <div className="item_info">
                                         <p className="item_info_txt">Habitaciones: {item.habitacionesPropiedad}</p>
                                         <p className="item_info_txt">Baños: {item.bañosPropiedad}</p>
@@ -29,8 +30,9 @@ export const ItemListContainer = withItemData(({ loading, itemData }) => {
                                     <p className="item_txt">{item.tipodepropiedad}</p>
                                     <p className="item_txt">${item.precioPropiedad}</p>
                                     <p className="item_txt">{item.estadoPropiedad}</p>
-                                </div>
-                            // </Link>
+
+                                </Link>
+                            </div>
                         ))
                     }
                 </div>
