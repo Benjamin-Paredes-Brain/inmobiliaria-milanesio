@@ -2,6 +2,7 @@ import withItemData from "./withItemData";
 import { useParams } from "react-router-dom";
 import { Loader } from "./Loader";
 import { ItemCarousel } from "./ItemCarousel";
+import { MapGoogle } from "../Map/MapGoogle.jsx";
 
 export const ItemDetail = withItemData(({ loading, itemData }) => {
     const { itemid } = useParams();
@@ -10,6 +11,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
     if (loading) {
         return <Loader />;
     }
+    const position = { lat: item.latitud, lng: item.longitud }
 
     return (
         <div className="view_container_background">
@@ -28,7 +30,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
 
                     <div>
                         <div className="item_description_container">
-                            <p className="info_title">Desripcion</p>
+                            <p className="info_title">Desripción</p>
                             <hr />
                             <p className="item_description">{item.descripcionPropiedad}</p>
                         </div>
@@ -40,6 +42,12 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                             <p>Habitaciones: {item.habitacionesPropiedad}</p>
                             <p>Tamaño: {item.tamañoPropiedad}</p>
                         </div>
+                    </div>
+
+                    <div className="item_ubi_container">
+                        <p className="info_title">Ubicación</p>
+                        <hr />
+                        <MapGoogle position={position} />
                     </div>
                 </div>
 

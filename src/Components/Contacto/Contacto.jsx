@@ -1,5 +1,8 @@
-export const Contacto = () => {
+import { MapGoogle } from "../Map/MapGoogle.jsx"
 
+
+export const Contacto = () => {
+    const position = { lat: -31.44153612722259, lng: -64.11896119170974 }
     return (
         <>
             <div className="contacto_banner">
@@ -21,9 +24,7 @@ export const Contacto = () => {
                 </form>
 
                 <h3 className="contacto_title">Ubicacion</h3>
-
-
-
+                <MapGoogle position={position} />
             </div>
 
         </>
