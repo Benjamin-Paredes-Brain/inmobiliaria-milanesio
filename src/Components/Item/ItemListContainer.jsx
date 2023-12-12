@@ -1,22 +1,20 @@
 import { Link } from "react-router-dom";
 import { Loader } from "./Loader";
 import withItemData from "./withItemData";
-// import { ItemFilters } from "./ItemFilters";
 
-export const ItemListContainer = withItemData(({ loading, itemData }) => {
+export const ItemListContainer = withItemData(({ loading, itemData, estadoPropiedad }) => {
+
+    const filteredItems = itemData.filter(item => item.estadoPropiedad === estadoPropiedad )
     return (
         <>
             <div className="main_itemlist_container">
-                {/* <div className="filters_container">
-                    <ItemFilters />
-                </div> */}
 
                 <div className="main_items_container">
                     {loading
                         ?
                         <Loader />
                         :
-                        itemData.map((item) => (
+                        filteredItems.map((item) => (
                             <div key={item.id} className="item_card">
                                 <Link className="item_link" to={`/propiedad/${item.id}`}>
 

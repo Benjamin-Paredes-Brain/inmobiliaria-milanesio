@@ -11,15 +11,15 @@ export const Contacto = () => {
 
             <div className="contacto_container">
                 <h2 className="contacto_title">Envianos tu consulta</h2>
-                <form action="" className="contacto_form">
+                <form action="https://formsubmit.co/26035621c9bc115287f757fd742b7ba4" method="POST" className="contacto_form">
                     <label className="contacto_label">Nombre Completo</label>
-                    <input type="text" className="contacto_input" />
+                    <input required={true} type="text" name="nombre" className="contacto_input" />
                     <label className="contacto_label">Email</label>
-                    <input type="text" className="contacto_input" />
+                    <input required={true} type="email" name="email" className="contacto_input" />
                     <label className="contacto_label">Celular</label>
-                    <input type="text" className="contacto_input" />
+                    <input required={true} type="text" name="celular" className="contacto_input" />
                     <label className="contacto_label">Consulta</label>
-                    <textarea type="text" className="contacto_input" />
+                    <textarea required={true} type="text" name="consulta" className="contacto_input" />
                     <button className="contacto_button">Enviar</button>
                 </form>
 
