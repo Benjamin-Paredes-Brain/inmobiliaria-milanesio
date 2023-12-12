@@ -14,9 +14,9 @@ export const Footer = () => {
                 <div className="footer_content">
                     <p className='footer_title'>Contacto</p>
                     <div className="social_container">
-                        <a className='social_link' href=""><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faInstagram} /></a>
-                        <a className='social_link' href=""><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faWhatsapp} /></a>
-                        <a className='social_link' href=""><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faFacebook} /></a>
+                        {/* <a className='social_link' href=""><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faInstagram} /></a> */}
+                        <a className='social_link' href="https://wa.me/3512252226?text=Hola, me gustaria consultar sobre" target='_blank'><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faWhatsapp} /></a>
+                        <a className='social_link' href="https://www.facebook.com/Inmobiliariamilanesio" target='_blank'><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faFacebook} /></a>
                     </div>
                 </div>
                 <div className="footer_content">

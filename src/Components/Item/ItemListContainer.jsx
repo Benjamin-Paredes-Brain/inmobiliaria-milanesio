@@ -7,7 +7,7 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
     const filteredItems = itemData.filter(item => item.estadoPropiedad === estadoPropiedad )
     return (
         <>
-            <div className="main_itemlist_container">
+            <div className="main_itemlist_container" style={{ minHeight: '100vh' }}>
 
                 <div className="main_items_container">
                     {loading

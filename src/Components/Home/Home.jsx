@@ -4,7 +4,7 @@ import { Slide } from "./Slide"
 export const Home = () => {
 
     return (
-        <div className="home_container">
+        <div className="home_container" style={{ minHeight: '100vh' }}>
             <Slide />
             <CardsSlideMobile />
             <div className="cards_home_container">
