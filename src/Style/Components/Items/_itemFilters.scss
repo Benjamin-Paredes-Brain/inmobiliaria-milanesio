@@ -1,0 +1,113 @@
+.filter_container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    height: fit-content;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: $color-3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .filter_title {
+        font-size: 18px;
+        font-weight: bold;
+        color: $color-1;
+        text-align: center;
+    }
+
+    .filter_label {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .filter_box {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        color: $color-2;
+        border: 1px solid $color-2;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .filter_button {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        color: $color-3;
+        border: 1px solid $color-2;
+        border-radius: 8px;
+        background-color: $color-2;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .filter_container {
+
+        .filter_title {
+            font-size: 16px;
+        }
+
+        .filter_label {
+            margin: 0.5rem 0;
+            font-size: 14px;
+        }
+
+        .filter_box {
+            margin: 0.5rem 0;
+            padding: 0.3rem;
+
+        }
+
+        .filter_button {
+            margin: 0.3rem 0;
+            padding: 0.3rem;
+            font-size: 14px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { 
+
+    .filter_container {
+        width: 100%;
+        height: fit-content;
+        margin: 1rem 0;
+        padding: 1rem;
+    
+        .filter_title {
+            font-size: 20px;
+            font-weight: bold;
+            color: $color-1;
+            text-align: center;
+        }
+    
+        .filter_label {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 0;
+            font-size: 16px;
+        }
+    
+        .filter_box {
+            margin: 0.5rem 0;
+            padding: 1rem;
+            color: $color-2;
+            border: 1px solid $color-2;
+            border-radius: 8px;
+            text-align: center;
+        }
+    
+        .filter_button {
+            margin: 0.5rem 0;
+            padding: 1rem;
+            color: $color-3;
+            border: 1px solid $color-2;
+            border-radius: 8px;
+            background-color: $color-2;
+        }
+    }
+
+}
