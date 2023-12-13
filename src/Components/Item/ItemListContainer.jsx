@@ -34,29 +34,35 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
             <div className="main_itemlist_container" style={{ minHeight: '100vh' }}>
                 <ItemFilters estadoPropiedad={`${estadoPropiedad}`} applyFilters={handleApplyFilters} />
                 <div className="main_items_container">
-                    {loading
-                        ?
+                    {loading ? (
                         <Loader />
-                        :
+                    ) : filteredItems.length === 0 ? (
+                        <p style={{ margin: "0 auto", fontWeight: "bold", fontSize: "20px", color: "red", marginTop: "2rem" }}>
+                            No se encontraron propiedades con los filtros especificados.</p>
+                    ) : (
                         filteredItems.map((item) => (
                             <div key={item.id} className="item_card">
-                                <Link className="item_link" to={`/propiedad/${item.id}`}>
+                                <Link className="item_link" to={`/propiedad/${estadoPropiedad}/${item.id}`}>
 
                                     <img className="item_img" src={item.portadaPropiedad} alt={item.tipoPropiedad} />
                                     <div className="item_info">
-                                        <p className="item_info_txt">Habitaciones: {item.habitacionesPropiedad}</p>
+                                        <p className="item_info_txt">Dormitorios: {item.dormitoriosPropiedad}</p>
                                         <p className="item_info_txt">Baños: {item.bañosPropiedad}</p>
-                                        <p className="item_info_txt">Tamaño: {item.tamañoPropiedad}</p>
+                                        <p className="item_info_txt">Tamaño: {item.tamañoPropiedad}m²</p>
                                     </div>
                                     <p className="item_title">{item.tipoPropiedad} - B° {item.barrioPropiedad}</p>
-                                    <p className="item_txt">${item.precioPropiedad}</p>
+                                    <p className="item_txt">
+                                        {estadoPropiedad === "alquiler"
+                                            ? `$${item.precioPropiedad} PESOS/MES`
+                                            : `$${item.precioPropiedad}USD`}
+                                    </p>
                                     <p className="item_txt">{item.estadoPropiedad}</p>
 
                                 </Link>
                             </div>
                         ))
 
-                    }
+                    )}
                 </div>
             </div>
         </>

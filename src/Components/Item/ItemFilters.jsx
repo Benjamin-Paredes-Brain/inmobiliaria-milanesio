@@ -7,19 +7,25 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
   const [surfaceRange, setSurfaceRange] = useState({ min: "", max: "" });
   const [neighborhood, setNeighborhood] = useState("");
   const [propertyType, setPropertyType] = useState("");
+
   const [availableNeighborhoods, setAvailableNeighborhoods] = useState([]);
   const [availablePropertyTypes, setAvailablePropertyTypes] = useState([]);
+  const [availablerooms, setAvailablerooms] = useState([]);
 
   useEffect(() => {
-    const uniqueNeighborhoods = [...new Set(itemData .filter(item => item.estadoPropiedad === estadoPropiedad) .map(item => item.barrioPropiedad))];
+    const uniqueNeighborhoods = [...new Set(itemData.filter(item => item.estadoPropiedad === estadoPropiedad).map(item => item.barrioPropiedad))];
     setAvailableNeighborhoods(uniqueNeighborhoods);
   }, [itemData, estadoPropiedad]);
 
   useEffect(() => {
-    const uniquePropertyTypes = [...new Set(itemData .filter(item => item.estadoPropiedad === estadoPropiedad) .map(item => item.tipoPropiedad))];
+    const uniquePropertyTypes = [...new Set(itemData.filter(item => item.estadoPropiedad === estadoPropiedad).map(item => item.tipoPropiedad))];
     setAvailablePropertyTypes(uniquePropertyTypes);
   }, [itemData, estadoPropiedad]);
 
+  useEffect(() => {
+    const uniqueRooms = [...new Set(itemData.filter(item => item.estadoPropiedad === estadoPropiedad).map(item => item.dormitoriosPropiedad))];
+    setAvailablerooms(uniqueRooms)
+  }), [itemData, estadoPropiedad]
 
   const handleApplyFilters = () => {
     applyFilters({ priceRange, rooms, surfaceRange, neighborhood, propertyType });
@@ -30,7 +36,10 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
       <p className="filter_title">Encontra tu propiedad</p>
 
       <label className="filter_label">
-        Precio:
+        <div>
+          <p>Precio:</p>
+          <p className="subtitle_label">{estadoPropiedad === "alquiler" ? `*En PESOS/MES` : `*En USD`}</p>
+        </div>
         <input className="filter_box"
           type="number"
           placeholder="Mínimo"
@@ -46,20 +55,30 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
       </label>
 
       <label className="filter_label">
-        Habitaciones:
-        <select className="filter_box" value={rooms} onChange={(e) => setRooms(e.target.value)}>
+        <div>
+          <p>Dormitorios:</p>
+          <p className="subtitle_label">*Disponibiliadad sujeta a las propiedades</p>
+        </div>
+        <select
+          className="filter_box"
+          value={rooms}
+          onChange={(e) => setRooms(e.target.value)}>
+
           <option value="">Cualquiera</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5+</option>
+          {availablerooms.map((roomsOption) => (
+            <option key={roomsOption} value={roomsOption}>
+              {roomsOption}
+            </option>
+          ))}
+
         </select>
       </label>
 
       <label className="filter_label">
-        Superficie:
+        <div>
+          <p>Superficie:</p>
+          <p className="subtitle_label">*En m²</p>
+        </div>
         <input className="filter_box"
           type="number"
           placeholder="Mínima"
@@ -75,7 +94,10 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
       </label>
 
       <label className="filter_label">
-        Barrio:
+        <div>
+          <p>Barrio:</p>
+          <p className="subtitle_label">*Disponibiliadad sujeta a las propiedades</p>
+        </div>
         <select
           className="filter_box"
           value={neighborhood}
@@ -91,7 +113,10 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
       </label>
 
       <label className="filter_label">
-        Tipo de Propiedad:
+        <div>
+          <p>Tipo de Propiedad:</p>
+          <p className="subtitle_label">*Disponibiliadad sujeta a las propiedades</p>
+        </div>
         <select
           className="filter_box"
           value={propertyType}

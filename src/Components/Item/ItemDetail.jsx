@@ -11,7 +11,7 @@ import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 
 export const ItemDetail = withItemData(({ loading, itemData }) => {
-    const { itemid } = useParams();
+    const { itemid, estadoPropiedad } = useParams();
     const item = itemData.find((p) => p.id === itemid);
 
     if (loading) {
@@ -33,7 +33,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                     allowOutsideClick: false
                 })
                 form.current.reset()
-            },(error) => {
+            }, (error) => {
                 Swal.fire({
                     title: 'HUBO UN ERROR AL ENVIAR LA CONSULTA',
                     icon: 'error',
@@ -54,7 +54,10 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                             <p className="item_direction">{item.direccionPropiedad}</p>
                         </div>
                         <div>
-                            <p className="item_price">{item.precioPropiedad}</p>
+                            <p className="item_price">
+                                {estadoPropiedad === "alquiler"
+                                    ? `$${item.precioPropiedad} PESOS/MES`
+                                    : `$${item.precioPropiedad}USD`}</p>
                             <p className="item_estado">{item.estadoPropiedad}</p>
                         </div>
                     </div>
@@ -72,8 +75,8 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                             <hr />
                             <p className="item_detail">Garage: {item.garagePropiedad}</p>
                             <p className="item_detail">Baños: {item.bañosPropiedad}</p>
-                            <p className="item_detail">Habitaciones: {item.habitacionesPropiedad}</p>
-                            <p className="item_detail">Tamaño: {item.tamañoPropiedad}</p>
+                            <p className="item_detail">Dormitorios: {item.dormitoriosPropiedad}</p>
+                            <p className="item_detail">Tamaño: {item.tamañoPropiedad}m²</p>
                         </div>
                     </div>
 

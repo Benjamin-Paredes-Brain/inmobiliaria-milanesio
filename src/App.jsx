@@ -23,7 +23,7 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/venta" element={<Venta />} />
         <Route path="/alquiler" element={<Alquiler />} />
-        <Route path="/propiedad/:itemid" element={<ItemDetail />} />
+        <Route path="/propiedad/:estadoPropiedad/:itemid" element={<ItemDetail />} />
       </Routes>
 
       <Footer />
