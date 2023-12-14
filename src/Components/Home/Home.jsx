@@ -1,4 +1,5 @@
 import { CardsSlideMobile } from "./CardsSlideMobile"
+import { ServiciosHome } from "./ServiciosHome"
 import { Slide } from "./Slide"
 
 export const Home = () => {
@@ -21,6 +22,7 @@ export const Home = () => {
                     <p className="cards_home_txt">Nuestra prioridad es tu satisfacción. Trabajamos incansablemente para superar tus expectativas y garantizar una experiencia excepcional en cada transacción.</p>
                 </div>
             </div>
+            <ServiciosHome />
         </div>
     )
 }

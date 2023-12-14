@@ -1,0 +1,129 @@
+.serviciosHome_mainContainer {
+    margin: 5rem 20%;
+
+    .serviciosHome_title {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .servicios_home_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .servicios_home_imgContainer {
+            width: 200px;
+            height: 200px;
+            margin: 5rem  0;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+
+            .servicios_home_img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .imgText {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.925);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                font-size: 18px;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .serviciosHome_mainContainer {
+        margin: 5rem 10%;
+
+        .serviciosHome_title {
+            font-size: 30px;
+        }
+
+        .servicios_home_container {
+            margin-top: 1rem;
+
+            .servicios_home_imgContainer {
+                width: 150px;
+                height: 150px;
+                margin: 1rem;
+
+                .imgText {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .serviciosHome_mainContainer {
+        margin: 0 5%;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+
+        .serviciosHome_title {
+            font-size: 26px;
+        }
+
+        .servicios_home_container {
+            justify-content: space-evenly;
+            margin-top: 1rem;
+
+            .servicios_home_imgContainer {
+                width: 130px;
+                height: 130px;
+                margin: 1rem;
+
+                .imgText {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .serviciosHome_mainContainer {
+        margin: 5rem 0;
+
+        .serviciosHome_title {
+            font-size: 18px;
+        }
+
+        .servicios_home_container {
+            justify-content: space-evenly;
+            margin-top: 1rem;
+
+            .servicios_home_imgContainer {
+                width: 120px;
+                height: 120px;
+                margin: 1rem;
+
+                .imgText {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
