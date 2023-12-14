@@ -21,8 +21,9 @@ export const Admin = () => {
     };
 
     return (
-        <div style={{ height: "100vh" }}>
+        <div className="admin_container">
             <CargarPropiedad />
+            <hr />
             <button type="button" onClick={handleLogout}>Cerrar sesión</button>
         </div>
     )

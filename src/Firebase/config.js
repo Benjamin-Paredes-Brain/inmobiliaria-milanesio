@@ -17,13 +17,3 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app)
 export const storage = getStorage(app)
-
-export function uploadFile(file) {
-    const fileName = file.name;
-
-    const storageRef = ref(storage, `imagenes propiedades/${fileName}`);
-
-    uploadBytes(storageRef, file).then((snapshot) => {
-      console.log("Archivo subido con éxito");
-    });
-  }
