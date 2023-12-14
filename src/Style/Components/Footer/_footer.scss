@@ -65,7 +65,38 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+
+    .footer_bg {
+    
+        .footer_container {
+
+            .logo_footer {
+                width: 10rem;
+            }
+    
+            .social_container {
+                .social_link {
+                    font-size: 1.5rem;
+                }
+            }
+    
+            .footer_ubi_container {
+    
+                .footer_ubi_txt {
+                    font-size: 14px;
+                }
+            }
+        }
+    
+        .copyright {
+            font-size: 16px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .footer_bg {
 
         .footer_container {
@@ -92,7 +123,7 @@
                     margin: 0 10px;
 
                     .awesome_icon {
-                        font-size: 1.2rem;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -101,10 +132,10 @@
                 color: $color-3;
                 margin: 0 4px;
 
-                .awesome_icon_ubi {
-                    font-size: 16px;
-                    margin-right: 8px;
-                }
+                // .awesome_icon_ubi {
+                //     font-size: 16px;
+                //     margin-right: 8px;
+                // }
 
                 .footer_ubi_txt {
                     font-size: 16px;
@@ -115,7 +146,7 @@
     
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
     .footer_bg {
 
@@ -124,7 +155,7 @@
             padding: 1rem;
 
             .footer_title {
-                font-size: 14px;
+                font-size: 13px;
                 margin-bottom: 0.5rem;
             }
 
@@ -142,7 +173,7 @@
             .social_container {
 
                 .social_link {
-                    margin: 0 5px;
+                    margin: 0 0.5rem;
 
                     .awesome_icon {
                         font-size: 16px;
@@ -152,7 +183,7 @@
 
             .footer_ubi_container {
                 color: $color-3;
-                margin: 0 4px;
+                margin: 0 20px;
 
                 .awesome_icon_ubi {
                     font-size: 16px;
@@ -160,7 +191,7 @@
                 }
 
                 .footer_ubi_txt {
-                    font-size: 12px;
+                    font-size: 10px;
                 }
             }
         }

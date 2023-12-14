@@ -11,15 +11,13 @@ import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 
 export const ItemDetail = withItemData(({ loading, itemData }) => {
+    const form = useRef();
     const { itemid, estadoPropiedad } = useParams();
     const item = itemData.find((p) => p.id === itemid);
 
-    if (loading) {
-        return <Loader />;
-    }
-    const position = { lat: item.latitud, lng: item.longitud }
+    if (loading) return <div style={{ display: "flex" }}><Loader /></div>;
 
-    const form = useRef();
+    const position = { lat: item.latitud, lng: item.longitud }
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -47,7 +45,6 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
         <div className="view_container_background">
             <div className="view_container">
                 <div className="itemDetail_container">
-
                     <div className="item_info">
                         <div>
                             <div className="item_title">{item.tipoPropiedad} - B° {item.barrioPropiedad}</div>
@@ -86,6 +83,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                         <MapGoogle position={position} />
                     </div>
                 </div>
+
 
                 <div className="item_side_container">
                     <div className="side_contact">

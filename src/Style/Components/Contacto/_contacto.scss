@@ -62,8 +62,39 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
     .contacto_container {
-        margin: 0 5%; 
+        margin: 0 10%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1023px) {
+
+    .contacto_banner {
+        height: 20vh;
+    
+        .contacto_txt {
+            font-size: 24px;
+        }
+    }
+    
+    .contacto_container {
+        margin: 0 5%;
+
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .contacto_banner {
+        height: 15vh;
+
+        .contacto_txt {
+            font-size: 22px;
+        }
+    }
+
+    .contacto_container {
+        margin: 0 5%;
     }
 }

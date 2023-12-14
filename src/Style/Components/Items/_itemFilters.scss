@@ -45,35 +45,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-
-    .filter_container {
-
-        .filter_title {
-            font-size: 16px;
-        }
-
-        .filter_label {
-            margin: 0.5rem 0;
-            font-size: 14px;
-        }
-
-        .filter_box {
-            margin: 0.5rem 0;
-            padding: 0.3rem;
-
-        }
-
-        .filter_button {
-            margin: 0.3rem 0;
-            padding: 0.3rem;
-            font-size: 14px;
-        }
-    }
-
-}
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
     .filter_container {
         width: 100%;
@@ -111,6 +83,34 @@
             border: 1px solid $color-2;
             border-radius: 8px;
             background-color: $color-2;
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .filter_container {
+
+        .filter_title {
+            font-size: 16px;
+        }
+
+        .filter_label {
+            margin: 0.5rem 0;
+            font-size: 14px;
+        }
+
+        .filter_box {
+            margin: 0.5rem 0;
+            padding: 0.3rem;
+
+        }
+
+        .filter_button {
+            margin: 0.3rem 0;
+            padding: 0.3rem;
+            font-size: 14px;
         }
     }
 

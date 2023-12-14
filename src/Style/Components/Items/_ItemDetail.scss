@@ -56,7 +56,7 @@
             }
 
             .items_carousel {
-                width: 700px;
+                width: 100%;
 
                 .itemsCarousel_img {
                     height: 500px;
@@ -73,6 +73,7 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 padding: 1rem;
                 margin: 1rem 0;
+                width: 100%;
             }
 
             .item_details_container {
@@ -80,6 +81,7 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 padding: 1rem;
                 margin: 1rem 0;
+                width: 100%;
             }
         }
 
@@ -88,12 +90,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 1rem;
             margin: 1rem 0;
+            width: 100%;
         }
 
         .item_side_container {
             display: flex;
             flex-direction: column;
             margin: 1rem 0;
+            width: 100%;
 
             .side_contact {
                 background-color: $color-3;
@@ -162,93 +166,103 @@
     }
 }
 
-
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
 
     .view_container_background {
-        padding: 1rem 0;
 
         .view_container {
-            margin: 0 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
+            margin: 0 10%;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
 
             .itemDetail_container {
-                margin: 0;
+                margin: 0 1rem;
 
                 .item_info {
-                    margin: 0.5rem 0;
 
                     .item_title {
-                        font-size: 14px;
+                        font-size: 18px;
                     }
 
-
                     .item_estado {
-                        color: $color-3;
-                        font-size: 10px;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        background-color: rgba(0, 0, 0, 0.925);
+                        font-size: 13px;
                         padding: 0.3rem;
-                        margin: 0.2rem auto;
-                        text-align: center;
-                        text-transform: uppercase;
                     }
 
                     .item_direction {
-                        font-size: 12px;
+                        font-size: 13px;
                     }
 
                     .item_price {
-                        font-size: 13px;
+                        font-size: 14px;
                     }
                 }
 
                 .items_carousel {
-                    width: 350px;
+                    width: 100%;
 
                     .itemsCarousel_img {
-                        height: 250px;
+                        height: 400px;
                         width: 100%;
                     }
                 }
 
-                .info_title {
-                    margin: 0.2rem 0;
-                    font-size: 16px;
-                }
-
                 .item_description_container {
-                    width: 350px;
-
-                    .item_description {
-                        font-size: 14px;
-                    }
+                    font-size: 15px;
                 }
 
                 .item_details_container {
-                    width: 350px;
-
-                    .item_detail {
-                        font-size: 14px;
-                    }
+                    font-size: 15px
                 }
             }
 
             .item_ubi_container {
-                width: 350px;
+                font-size: 15px
+            }
+
+            .item_side_container {
+                margin: 0.5rem 0;
+
+                .side_contact {
+                    width: 100%;
+
+                    .side_contact_title {
+                        font-size: 16px;
+                    }
+
+                    .contacto_form {
+
+                        .contacto_input {
+                            padding: 0.8rem;
+                            margin: 1rem;
+                        }
+
+                        .contacto_button {
+                            margin: 0.5rem 1rem;
+                            padding: 0.8rem;
+                            font-size: 14px;
+                        }
+
+                        .contacto_wsp {
+                            margin: 0.5rem 1rem;
+                            padding: 0.8rem;
+                            font-size: 14px;
+                        }
+
+
+                        .icon {
+                            margin: 0 0.5rem;
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
         }
     }
 
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .view_container_background {
         padding: 1rem 0;
 
@@ -262,6 +276,7 @@
 
             .itemDetail_container {
                 margin: 0;
+                width: 100%;
 
                 .item_info {
                     margin: 0.5rem 0;
@@ -293,7 +308,7 @@
                 }
 
                 .items_carousel {
-                    width: 600px;
+                    width: 100%;
 
                     .itemsCarousel_img {
                         height: 400px;
@@ -307,7 +322,7 @@
                 }
 
                 .item_description_container {
-                    width: 600px;
+                    width: 100%;
 
                     .item_description {
                         font-size: 16px;
@@ -315,7 +330,7 @@
                 }
 
                 .item_details_container {
-                    width: 600px;
+                    width: 100%;
 
                     .item_detail {
                         font-size: 16px;
@@ -324,12 +339,161 @@
             }
 
             .item_ubi_container {
-                width: 600px;
+                width: 100%;
             }
 
             .item_side_container {
-                width: 600px;
+                width: 100%;
             }
         }
     }
+}
+
+@media screen and (max-width: 767px) {
+
+    .view_container_background {
+        padding: 1rem 0;
+
+        .view_container {
+            margin: 0 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            .itemDetail_container {
+                margin: 0;
+
+                .item_info {
+                    margin: 0.5rem 0;
+
+                    .item_title {
+                        font-size: 13px;
+                    }
+
+
+                    .item_estado {
+                        font-size: 12px;
+                        padding: 0.3rem;
+                        margin: 0.2rem auto;
+                    }
+
+                    .item_direction {
+                        font-size: 10px;
+                    }
+
+                    .item_price {
+                        font-size: 12px;
+                    }
+                }
+
+                .items_carousel {
+                    width: 100%;
+
+                    .itemsCarousel_img {
+                        height: 250px;
+                        width: 100%;
+                    }
+                }
+
+                .info_title {
+                    margin: 0.2rem 0;
+                    font-size: 16px;
+                }
+
+                .item_description_container {
+                    width: 100%;
+
+                    .item_description {
+                        font-size: 14px;
+                    }
+                }
+
+                .item_details_container {
+                    width: 100%;
+
+                    .item_detail {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .item_ubi_container {
+                width: 100%;
+            }
+
+            .item_side_container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 1rem;
+
+                .side_contact {
+                    background-color: $color-3;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+                    .side_contact_title {
+                        text-align: center;
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-top: 1rem;
+                        color: $color-2;
+                    }
+
+                    .side_concact_title {
+                        font-size: 18px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .contacto_form {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        .contacto_input {
+                            padding: 1rem;
+                            margin: 1rem 2rem;
+                        }
+
+                        .contacto_button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            margin: 1rem 2rem;
+                            padding: 1rem;
+                            border-radius: 8px;
+                            border: none;
+                            background-color: $color-1;
+                            color: $color-3;
+                        }
+
+                        .contacto_wsp {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            text-decoration: none;
+                            margin: 1rem 2rem;
+                            padding: 1rem;
+                            border-radius: 8px;
+                            border: none;
+                            background-color: #0cbc44;
+                            color: $color-3;
+                        }
+
+
+                        .icon {
+                            margin: 0 0.5rem;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

@@ -2,14 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 20%;
+    height: 100vh;
 }
 
 .cards_home {
-    height: 300px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
     background-color: $color-2;
     margin: 1rem 2rem;
     padding: 1rem;
+    border-radius: 8px;
 
     display: flex;
     flex-direction: column;
@@ -36,29 +39,61 @@
     display: none;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
 
-@media screen and (min-width: 768px) and (max-width: 992px)  {
     .cards_home_container {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 10%;
+    }
+    
+    .cards_home {
+        height: 200px;
+        width: 400px;
+        margin: 2rem 0.5rem;
+        padding: 1rem;
+    
+        .cards_home_title {
+            margin-bottom: 0;
+            font-size: 16px;
+            text-align: center;
+        }
+    
+        .cards_home_txt {
+            font-size: 13px;
+        }
     }
     
     .cardsSlideMobile {
+        display: none;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .cards_home_container {
+        display: none;
+    }
+
+    .cardsSlideMobile {
         margin: 0 auto;
         display: block;
-        height: 270px;
+        height: 350px;
         width: 650px;
 
         .cards_home {
-            height: 200px;
-            width: 350px;
+            height: 250px;
+            width: 400px;
             padding: 1rem;
-            margin: 1rem auto;
-    
+            margin: 2rem auto;
+
             .cards_home_title {
                 font-size: 20px;
                 margin-bottom: 12px;
             }
-    
+
             .cards_home_txt {
                 margin: 0;
                 font-size: 16px;
@@ -68,26 +103,26 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .cards_home_container {
         display: none;
     }
-    
-    .cardsSlideMobile {
+
+    .cardsSlideMobile { 
         display: block;
-        height: 270px;
+        height: 310px;
 
         .cards_home {
             height: 200px;
             width: 250px;
             padding: 0.5rem;
-            margin: 1rem auto;
-    
+            margin: 3rem auto;
+
             .cards_home_title {
                 font-size: 16px;
                 margin-bottom: 5px;
             }
-    
+
             .cards_home_txt {
                 margin: 0;
                 font-size: 12px;

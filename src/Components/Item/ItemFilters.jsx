@@ -25,7 +25,7 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
   useEffect(() => {
     const uniqueRooms = [...new Set(itemData.filter(item => item.estadoPropiedad === estadoPropiedad).map(item => item.dormitoriosPropiedad))];
     setAvailablerooms(uniqueRooms)
-  }), [itemData, estadoPropiedad]
+  }, [itemData, estadoPropiedad])
 
   const handleApplyFilters = () => {
     applyFilters({ priceRange, rooms, surfaceRange, neighborhood, propertyType });

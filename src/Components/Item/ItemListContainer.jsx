@@ -29,14 +29,14 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
             (!filters.propertyType || item.tipoPropiedad === filters.propertyType)
         );
     })
+
+    if (loading) return <div style={{display: "flex"}}><Loader /></div>;
     return (
         <>
             <div className="main_itemlist_container" style={{ minHeight: '100vh' }}>
                 <ItemFilters estadoPropiedad={`${estadoPropiedad}`} applyFilters={handleApplyFilters} />
                 <div className="main_items_container">
-                    {loading ? (
-                        <Loader />
-                    ) : filteredItems.length === 0 ? (
+                    {filteredItems.length === 0 ? (
                         <p style={{ margin: "0 auto", fontWeight: "bold", fontSize: "20px", color: "red", marginTop: "2rem" }}>
                             No se encontraron propiedades con los filtros especificados.</p>
                     ) : (

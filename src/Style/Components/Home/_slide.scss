@@ -32,54 +32,88 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px)  {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+
+    .slide_container {
+        margin-bottom: 3rem;
+        .img_slide {
+            height: 300px;
+            width: 100%;
+        }
+    
+        .container_info_slide {
+            top: 50px;
+
+            width: 650px;
+            height: 200px;
+    
+            .title_slide {
+                font-size: 20px;
+            }
+    
+            .txt_slide {
+                font-size: 16px;
+            }
+        }
+    }
+
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .slide_container {
 
         .img_slide {
-            height: 550px;
+            height: 450px;
+            width: 100%;
         }
 
         .container_info_slide {
-            width: 55%;
-            height: 60%;
             margin: 0 auto;
+            top: 100px;
             padding: 1rem;
+            width: 550px;
+            height: 300px;
 
             .title_slide {
-                font-size: 14px;
-                margin-bottom: 0.5rem;
+                color: $color-1;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 18px;
+                margin-bottom: 1rem;
             }
 
             .txt_slide {
-                font-size: 14px;
-                text-align: center;
+                color: $color-3;
+                font-size: 16px;
             }
         }
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .slide_container {
 
         .img_slide {
-            height: 350px;
+            height: 300px;
+            width: 100%;
         }
 
         .container_info_slide {
-            width: 60%;
-            height: 40%;
-            margin: 0 auto;
-            padding: 1rem;
+            top: 100px;
+            padding: 0.5rem;
+            width: 270px;
+            height: 150px;
 
             .title_slide {
-                font-size: 12px;
+                font-size: 14px;
                 margin-bottom: 0.5rem;
             }
 
             .txt_slide {
                 color: $color-3;
-                font-size: 10px;
-                text-align: center;
+                font-size: 12px;
             }
         }
     }
