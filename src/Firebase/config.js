@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
+import { getAuth } from "firebase/auth";
+import { getStorage, ref, uploadBytes } from "firebase/storage"
 
 const firebaseConfig = {
     apiKey: "AIzaSyBHYcUv3DbQzzZx2bqutEOI3p7pQ3qBcZE",
@@ -12,6 +14,16 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 export const db = getFirestore(app)
+export const storage = getStorage(app)
 
+export function uploadFile(file) {
+    const fileName = file.name;
 
+    const storageRef = ref(storage, `imagenes propiedades/${fileName}`);
+
+    uploadBytes(storageRef, file).then((snapshot) => {
+      console.log("Archivo subido con éxito");
+    });
+  }
