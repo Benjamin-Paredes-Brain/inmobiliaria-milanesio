@@ -1,0 +1,23 @@
+.form_edit {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .labelEdit {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+
+        .inputEdit {
+            padding: 0.5rem;
+        }
+    }
+    .buttonEdit {
+        border: none;
+        padding: 0.5rem;
+        background-color: $color-2;
+        color: $color-3;
+        font-weight: bold;
+    }
+}
