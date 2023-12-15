@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext.jsx";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2"
 
 export const Login = () => {
     const { login, user, logout } = useContext(AuthContext)
@@ -12,39 +13,80 @@ export const Login = () => {
             await login(email, password);
             setEmail('');
             setPassword('');
+            Swal.fire({
+                title: 'Usuario logueado correctamente',
+                icon: 'success',
+                confirmButtonText: 'ACCEPT',
+                allowOutsideClick: false
+            })
         } catch (error) {
-            console.error('Error al iniciar sesión:', error.message);
+            Swal.fire({
+                title: 'HUBO UN ERROR AL INICIAR SESION',
+                icon: 'error',
+                confirmButtonText: 'ACCEPT',
+                allowOutsideClick: false
+            })
         }
     };
 
     const handleLogout = async () => {
         try {
             await logout();
-            console.log("Usuario cerró sesión correctamente");
+            Swal.fire({
+                title: 'Sesion cerrada correctamente',
+                icon: 'success',
+                confirmButtonText: 'ACCEPT',
+                allowOutsideClick: false
+            })
         } catch (error) {
-            console.error('Error al cerrar sesión:', error.message);
+
+            Swal.fire({
+                title: 'HUBO UN ERROR AL CERRAR SESION',
+                icon: 'error',
+                confirmButtonText: 'ACCEPT',
+                allowOutsideClick: false
+            })
+            
         }
     };
 
     return (
-        <div style={{ height: "100vh" }}>
-            <h2>Iniciar sesión</h2>
-            <form>
-                <label>Email:
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <div className="login-container">
+            <form className="login-form">
+            <h2 className="login-heading">Iniciar sesión</h2>
+                <label className="login-label">
+                    <input
+                    placeholder="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="login-input"
+                    />
                 </label>
                 <br />
-                <label>Contraseña:
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <label className="login-label">
+                    <input
+                    placeholder="contraseña"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="login-input"
+                    />
                 </label>
                 <br />
-                <button type="button" onClick={handleLogin}>Iniciar sesión</button>
+                <button type="button" onClick={handleLogin} className="login-button">
+                    Iniciar sesión
+                </button>
             </form>
             {user && (
-                <div>
-                    <h4>Actualmente haz iniciado sesión como {user.email}</h4>
-                    <button type="button" onClick={handleLogout}>Cerrar sesión</button>
-                    <Link to={"/admin"}>Ir al Administrador de propiedades</Link>
+                <div className="user-info">
+                    <h4 className="user-welcome">Actualmente has iniciado sesión como {user.email}</h4>
+                    <button type="button" onClick={handleLogout} className="logout-button">
+                        Cerrar sesión
+                    </button>
+                    <Link to={"/admin"} className="admin-link">
+                        Ir al Administrador de propiedades
+                    </Link>
                 </div>
             )}
         </div>
