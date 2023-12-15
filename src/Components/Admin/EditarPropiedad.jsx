@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { db } from "../../Firebase/config.js";
 import { collection, getDocs, doc, getDoc, updateDoc } from "firebase/firestore"
 import Swal from 'sweetalert2';
+import { db, storage } from "../../Firebase/config.js"
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export const EditarPropiedad = () => {
     const [propiedades, setPropiedades] = useState([]);
@@ -61,6 +62,19 @@ export const EditarPropiedad = () => {
         }
 
         try {
+            const nuevasImagenesURLs = await Promise.all(imagenesPropiedad.map(async (file) => {
+                const storageRef = ref(storage, `imagenes propiedades/${file.name}`);
+                await uploadBytes(storageRef, file);
+                return await getDownloadURL(storageRef);
+            }));
+            console.log('Nuevas imágenes URL:', nuevasImagenesURLs);
+
+            const imagenesActualizadas = propiedadEncontrada.imagenesPropiedad
+                ? [...propiedadEncontrada.imagenesPropiedad, ...nuevasImagenesURLs]
+                : nuevasImagenesURLs;
+
+            console.log('Imágenes actualizadas:', imagenesActualizadas);
+
             const propiedadRef = doc(db, 'INMUEBLES', selectedPropiedadId);
             await updateDoc(propiedadRef, {
                 barrioPropiedad: propiedadEncontrada.barrioPropiedad,
@@ -75,7 +89,7 @@ export const EditarPropiedad = () => {
                 precioPropiedad: propiedadEncontrada.precioPropiedad,
                 tamañoPropiedad: propiedadEncontrada.tamañoPropiedad,
                 tipoPropiedad: propiedadEncontrada.tipoPropiedad,
-                imagenesPropiedad: propiedadEncontrada.imagenesPropiedad,
+                imagenesPropiedad: imagenesActualizadas,
             });
 
             Swal.fire({
@@ -94,6 +108,7 @@ export const EditarPropiedad = () => {
             });
         }
     };
+
 
     return (
         <div>
@@ -166,7 +181,7 @@ export const EditarPropiedad = () => {
                             <input className='inputEdit' type="text" value={propiedadEncontrada.tipoPropiedad} onChange={(e) => setPropiedadEncontrada({ ...propiedadEncontrada, tipoPropiedad: e.target.value })} />
                         </label>
                         <label className='labelEdit'>
-                            Imágenes de la Propiedad:
+                            Imágenes de la Propiedad (De las que se muestran en el detalle, no incluye portada):
                             <div>
                                 <select
                                     value={""}

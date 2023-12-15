@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext.jsx";
 import { Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import {EditarPropiedad} from "./EditarPropiedad.jsx";
+import { EditarPropiedad } from "./EditarPropiedad.jsx";
+import { EliminarPropiedad } from "./EliminarPropiedad.jsx";
 
 
 export const Admin = () => {
@@ -46,7 +47,8 @@ export const Admin = () => {
             <CargarPropiedad />
             <hr />
             <EditarPropiedad />
-
+            <hr />
+            <EliminarPropiedad />
         </div>
     )
 }
