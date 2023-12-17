@@ -30,7 +30,7 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
         );
     })
 
-    if (loading) return <div style={{display: "flex"}}><Loader /></div>;
+    if (loading) return <div style={{ display: "flex" }}><Loader /></div>;
     return (
         <>
             <div className="main_itemlist_container" style={{ minHeight: '100vh' }}>
@@ -45,18 +45,25 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
                                 <Link className="item_link" to={`/propiedad/${estadoPropiedad}/${item.id}`}>
 
                                     <img className="item_img" src={item.portadaPropiedad} alt={item.tipoPropiedad} />
-                                    <div className="item_info">
-                                        <p className="item_info_txt">Dormitorios: {item.dormitoriosPropiedad}</p>
-                                        <p className="item_info_txt">Baños: {item.bañosPropiedad}</p>
-                                        <p className="item_info_txt">Tamaño: {item.tamañoPropiedad}m²</p>
+                                    <div className="item_container">
+                                        <p className="item_title">{item.tipoPropiedad} - B° {item.barrioPropiedad}</p>
+
+                                        <p className="item_direction">{item.direccionPropiedad}</p>
+
+                                        <div className="item_info">
+                                            <p className="item_info_txt">Dormitorios <span>{item.dormitoriosPropiedad}</span></p>
+                                            <p className="item_info_txt">Baños <span>{item.bañosPropiedad}</span></p>
+                                            <p className="item_info_txt">Tamaño <span>{item.tamañoPropiedad}m²</span></p>
+                                        </div>
                                     </div>
-                                    <p className="item_title">{item.tipoPropiedad} - B° {item.barrioPropiedad}</p>
-                                    <p className="item_txt">
-                                        {estadoPropiedad === "alquiler"
-                                            ? `$${item.precioPropiedad} PESOS/MES`
-                                            : `$${item.precioPropiedad}USD`}
-                                    </p>
-                                    <p className="item_txt">{item.estadoPropiedad}</p>
+                                    <div className="item_imp_container">
+                                        <p className="item_imp_txt">
+                                            {estadoPropiedad === "alquiler"
+                                                ? `$${item.precioPropiedad} PESOS/MES`
+                                                : `$${item.precioPropiedad}USD`}
+                                        </p>
+                                        <p className="item_imp_txt">{item.estadoPropiedad.toUpperCase()}</p>
+                                    </div>
 
                                 </Link>
                             </div>
