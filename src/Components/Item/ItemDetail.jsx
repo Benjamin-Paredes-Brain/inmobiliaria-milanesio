@@ -73,7 +73,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                             <p className="item_detail">Garage: {item.garagePropiedad}</p>
                             <p className="item_detail">Baños: {item.bañosPropiedad}</p>
                             <p className="item_detail">Dormitorios: {item.dormitoriosPropiedad}</p>
-                            <p className="item_detail">Tamaño: {item.tamañoPropiedad}m²</p>
+                            <p className="item_detail">Superficie: {item.tamañoPropiedad}m²</p>
                         </div>
                     </div>
 

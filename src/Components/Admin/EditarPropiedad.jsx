@@ -173,7 +173,7 @@ export const EditarPropiedad = () => {
                             })} />
                         </label>
                         <label className='labelEdit'>
-                            Tamaño de la Propiedad:
+                            Superficie de la Propiedad:
                             <input className='inputEdit' type="Number" value={propiedadEncontrada.tamañoPropiedad} onChange={(e) => setPropiedadEncontrada({ ...propiedadEncontrada, tamañoPropiedad: e.target.value })} />
                         </label>
                         <label className='labelEdit'>

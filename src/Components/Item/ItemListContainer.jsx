@@ -53,14 +53,14 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
                                         <div className="item_info">
                                             <p className="item_info_txt">Dormitorios <span>{item.dormitoriosPropiedad}</span></p>
                                             <p className="item_info_txt">Baños <span>{item.bañosPropiedad}</span></p>
-                                            <p className="item_info_txt">Tamaño <span>{item.tamañoPropiedad}m²</span></p>
+                                            <p className="item_info_txt">Superficie <span>{item.tamañoPropiedad}m²</span></p>
                                         </div>
                                     </div>
                                     <div className="item_imp_container">
                                         <p className="item_imp_txt">
                                             {estadoPropiedad === "alquiler"
-                                                ? `$${item.precioPropiedad} PESOS/MES`
-                                                : `$${item.precioPropiedad}USD`}
+                                                ? `${item.precioPropiedad} PESOS/MES`
+                                                : `${item.precioPropiedad}USD`}
                                         </p>
                                         <p className="item_imp_txt">{item.estadoPropiedad.toUpperCase()}</p>
                                     </div>

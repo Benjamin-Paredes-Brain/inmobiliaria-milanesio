@@ -242,7 +242,7 @@ export const CargarPropiedad = () => {
                 <br />
                 <label className='addLabel'>
                     <div className='addLabel_txt'>
-                        <p className='add_title_label'>Tamaño de la Propiedad:</p>
+                        <p className='add_title_label'>Superficie de la Propiedad:</p>
                         <p className="add_subtitle_label">*Insertar número (sin m²)</p>
                     </div>
                     <input className='addInput' type="Number" value={tamañoPropiedad} onChange={(e) => setTamañoPropiedad(e.target.value)} />
