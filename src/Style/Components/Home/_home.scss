@@ -38,6 +38,19 @@
     display: none;
 }
 
+.frase_container{
+    background-color: $color-1;
+    padding: 3rem;
+    margin-top: 2rem;
+
+    .frase {
+        margin: 0 20%;
+        color: $color-3;
+        text-align: center;
+        font-size: 32px;
+    }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
 
     .cards_home_container {
@@ -66,6 +79,15 @@
     
     .cardsSlideMobile {
         display: none;
+    }
+
+    .frase_container{
+        padding: 2rem;
+    
+        .frase {
+            margin: 0 5%;
+            font-size: 24px;
+        }
     }
 
 
@@ -100,6 +122,15 @@
         }
     }
 
+    .frase_container{
+        padding: 2rem;
+    
+        .frase {
+            margin: 0 5%;
+            font-size: 22px;
+        }
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -114,7 +145,7 @@
         .cards_home {
             height: 200px;
             width: 250px;
-            padding: 0.5rem;
+            padding: 1rem;
             margin: 3rem auto;
 
             .cards_home_title {
@@ -126,6 +157,15 @@
                 margin: 0;
                 font-size: 12px;
             }
+        }
+    }
+
+    .frase_container{
+        padding: 1.5rem;
+    
+        .frase {
+            margin: 0 2%;
+            font-size: 18px;
         }
     }
 

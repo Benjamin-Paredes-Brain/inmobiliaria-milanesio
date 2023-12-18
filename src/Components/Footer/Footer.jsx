@@ -22,7 +22,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="footer_content">
-                        <p className='footer_title'>Ubicacion</p>
+                        <p className='footer_title'>Ubicación</p>
                         <div className='footer_ubi_container'><div><FontAwesomeIcon className='awesome_icon_ubi' icon={faMapPin} /></div><p className='footer_ubi_txt'>Blvd. Cangallo 2806, Córdoba</p></div>
                     </div>
                 </div>

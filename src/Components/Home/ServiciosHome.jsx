@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const ServiciosHome = () => {
 
     return (
@@ -6,20 +8,28 @@ export const ServiciosHome = () => {
 
             <div className="servicios_home_container">
                 <div className="servicios_home_imgContainer">
-                    <img src="./alquiler.jpg" alt="alquiler inmobiliario" className="servicios_home_img" />
-                    <span className="imgText">Alquileres</span>
+                    <Link to={"/servicios"}>
+                        <img src="./alquiler.jpg" alt="alquiler inmobiliario" className="servicios_home_img" />
+                        <span className="imgText">Alquileres</span>
+                    </Link>
                 </div>
                 <div className="servicios_home_imgContainer">
-                    <img src="./venta.jpg" alt="venta inmobiliaria" className="servicios_home_img" />
-                    <span className="imgText">Ventas</span>
+                    <Link to={"/servicios"}>
+                        <img src="./venta.jpg" alt="venta inmobiliaria" className="servicios_home_img" />
+                        <span className="imgText">Ventas</span>
+                    </Link>
                 </div>
                 <div className="servicios_home_imgContainer">
-                    <img src="./tasacion.jpg" alt="tasacion inmobiliaria" className="servicios_home_img" />
-                    <span className="imgText">Tasaciónes</span>
+                    <Link to={"/servicios"}>
+                        <img src="./tasacion.jpg" alt="tasacion inmobiliaria" className="servicios_home_img" />
+                        <span className="imgText">Tasaciones</span>
+                    </Link>
                 </div>
                 <div className="servicios_home_imgContainer">
-                    <img src="./contrato.jpg" alt="contrato inmobiliario" className="servicios_home_img" />
-                    <span className="imgText">Contratos</span>
+                    <Link to={"/servicios"}>
+                        <img src="./contrato.jpg" alt="contrato inmobiliario" className="servicios_home_img" />
+                        <span className="imgText">Contratos</span>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -22,6 +22,10 @@ export const Home = () => {
                     <p className="cards_home_txt">Nuestra prioridad es tu satisfacción. Trabajamos incansablemente para superar tus expectativas y garantizar una experiencia excepcional en cada transacción.</p>
                 </div>
             </div>
+
+            <div className="frase_container">
+                <h5 className="frase">"Somos una inmobiliaria líder en la gestión de propiedades"</h5>
+            </div>
             <ServiciosHome />
         </div>
     )

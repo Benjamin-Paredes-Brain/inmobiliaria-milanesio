@@ -49,7 +49,7 @@ export const Contacto = () => {
                     <button className="contacto_button">Enviar</button>
                 </form>
 
-                <h3 className="contacto_title">Ubicacion</h3>
+                <h3 className="contacto_title">Ubicación</h3>
                 <MapGoogle position={position} />
             </div>
 
