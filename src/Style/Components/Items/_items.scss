@@ -76,8 +76,27 @@
     .main_itemlist_container {
 
         .main_items_container {
+            margin: 0.5rem;
+            gap: 0.5rem;
+
             .item_card {
-                width: 300px;
+                width: 320px;
+
+                .item_link {
+
+                    .item_container {
+                        padding: 0.8rem;
+
+                        .item_title {
+                            font-size: 15px;
+                        }
+                    }
+
+                    .item_imp_container {
+                        padding: 0.8rem;
+                    }
+                }
+
             }
 
         }
@@ -101,7 +120,7 @@
             .item_card {
                 width: 100%;
 
-                
+
                 .item_link {
 
                     .item_img {

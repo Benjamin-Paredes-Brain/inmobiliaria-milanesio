@@ -47,6 +47,7 @@ export const ItemListContainer = withItemData(({ loading, itemData, estadoPropie
                                     <img className="item_img" src={item.portadaPropiedad} alt={item.tipoPropiedad} />
                                     <div className="item_container">
                                         <p className="item_title">{item.tipoPropiedad} - B° {item.barrioPropiedad}</p>
+                                        <p className="item_title"></p>
 
                                         <p className="item_direction">{item.direccionPropiedad}</p>
 
