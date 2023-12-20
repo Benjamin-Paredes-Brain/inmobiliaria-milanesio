@@ -4,6 +4,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from "uuid"
 import Swal from 'sweetalert2';
+import Compressor from 'compressorjs';
 
 export const CargarPropiedad = () => {
     const [barrioPropiedad, setBarrioPropiedad] = useState('');
@@ -24,11 +25,23 @@ export const CargarPropiedad = () => {
     const handleImageUpload = async (files, isPortada) => {
         if (files instanceof FileList) {
             const imageUploadPromises = Array.from(files).map(async (file) => {
-                const storageRef = ref(storage, `imagenes propiedades/${file.name}.${v4()}`);
-                await uploadBytes(storageRef, file);
+                const compressedFile = await new Promise((resolve) => {
+                    new Compressor(file, {
+                        quality: 0.8,
+                        success(result) {
+                            resolve(result);
+                        },
+                        error(error) {
+                            resolve(file);
+                        },
+                    });
+                });
+                const storageRef = ref(storage, `imagenes propiedades/${v4()}`);
+                await uploadBytes(storageRef, compressedFile);
                 const downloadURL = await getDownloadURL(storageRef);
                 return downloadURL;
             });
+
 
             try {
                 const imageUrls = await Promise.all(imageUploadPromises);
@@ -88,10 +101,10 @@ export const CargarPropiedad = () => {
                 barrioPropiedad: barrioPropiedad.toString().toUpperCase(),
                 bañosPropiedad,
                 descripcionPropiedad,
-                direccionPropiedad,
+                direccionPropiedad: direccionPropiedad.toString().toUpperCase(),
                 dormitoriosPropiedad,
-                estadoPropiedad: estadoPropiedad.toString().toLowerCase(),
-                garagePropiedad: garagePropiedad.toString().toLowerCase(),
+                estadoPropiedad: estadoPropiedad.toString().toUpperCase(),
+                garagePropiedad: garagePropiedad.toString().toUpperCase(),
                 imagenesPropiedad,
                 latitud: Number(latitud),
                 longitud: Number(longitud),
@@ -148,7 +161,7 @@ export const CargarPropiedad = () => {
                 <label className='addLabel'>
                     <div className='addLabel_txt'>
                         <p className='add_title_label'>Estado de la Propiedad:</p>
-                        <p className="add_subtitle_label">*Insertar todo en minus, (venta / alquiler)</p>
+                        <p className="add_subtitle_label">*Insertar en mayus, (VENTA / ALQUILER)</p>
                     </div>
                     <input className='addInput' type="text" value={estadoPropiedad} onChange={(e) => setEstadoPropiedad(e.target.value)} />
                 </label>
@@ -195,7 +208,7 @@ export const CargarPropiedad = () => {
                 <label className='addLabel'>
                     <div className='addLabel_txt'>
                         <p className='add_title_label'>Dirección de la Propiedad:</p>
-                        <p className="add_subtitle_label">*Insertar respetando mayus y minus</p>
+                        <p className="add_subtitle_label">*Insertar en mayus</p>
                     </div>
                     <input className='addInput' type="text" value={direccionPropiedad} onChange={(e) => setDireccionPropiedad(e.target.value)} />
                 </label>
@@ -211,7 +224,7 @@ export const CargarPropiedad = () => {
                 <label className='addLabel'>
                     <div className='addLabel_txt'>
                         <p className='add_title_label'>Garage de la Propiedad:</p>
-                        <p className="add_subtitle_label">*Insertar si/no, en minus</p>
+                        <p className="add_subtitle_label">*Insertar si/no, en mayus</p>
                     </div>
                     <input className='addInput' type="text" value={garagePropiedad} onChange={(e) => setGaragePropiedad(e.target.value)} />
                 </label>

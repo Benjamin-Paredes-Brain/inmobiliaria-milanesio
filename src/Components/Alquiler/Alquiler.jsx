@@ -7,7 +7,7 @@ export const Alquiler = () => {
             <h1 className="venta-alquiler_title">ALQUILER</h1>
             <hr />
 
-            <ItemListContainer estadoPropiedad="alquiler" />
+            <ItemListContainer estadoPropiedad="ALQUILER" />
 
         </div>
     )

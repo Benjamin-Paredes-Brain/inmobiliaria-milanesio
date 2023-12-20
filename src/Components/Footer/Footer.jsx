@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faMapPin } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faMapPin } from '@fortawesome/free-solid-svg-icons'
+import {  faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 export const Footer = () => {
 
@@ -15,7 +15,6 @@ export const Footer = () => {
                     <div className="footer_content">
                         <p className='footer_title'>Contacto</p>
                         <div className="social_container">
-                            {/* <a className='social_link' href=""><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faInstagram} /></a> */}
                             <a className='social_link' href="https://wa.me/3512252226?text=Hola, me gustaria consultar sobre" target='_blank'><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faWhatsapp} /></a>
                             <a className='social_link' href="https://www.facebook.com/Inmobiliariamilanesio" target='_blank'><FontAwesomeIcon className='awesome_icon awesome_icon_social' icon={faFacebook} /></a>
                         </div>

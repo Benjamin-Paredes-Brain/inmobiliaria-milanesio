@@ -38,7 +38,7 @@ export const ItemFilters = withItemData(({ itemData, applyFilters, estadoPropied
       <label className="filter_label">
         <div>
           <p>Precio:</p>
-          <p className="subtitle_label">{estadoPropiedad === "alquiler" ? `*En PESOS/MES` : `*En USD`}</p>
+          <p className="subtitle_label">{estadoPropiedad === "ALQUILER" ? `*En PESOS/MES` : `*En USD`}</p>
         </div>
         <input className="filter_box"
           type="number"

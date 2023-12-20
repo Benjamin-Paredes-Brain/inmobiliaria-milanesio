@@ -52,7 +52,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
                         </div>
                         <div>
                             <p className="item_price">
-                                {estadoPropiedad === "alquiler"
+                                {estadoPropiedad === "ALQUILER"
                                     ? `$${item.precioPropiedad} PESOS/MES`
                                     : `$${item.precioPropiedad}USD`}</p>
                             <p className="item_estado">{item.estadoPropiedad}</p>
