@@ -3,14 +3,22 @@ import { getFirestore } from "firebase/firestore"
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage"
 
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY
+const authDomain = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN
+const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID
+const storageBucket = import.meta.env.VITE_FIREBASE_STORAGE_BUCKET
+const messagingSenderId = import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID
+const appId = import.meta.env.VITE_FIREBASE_APP_ID
+const measurementId = import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBHYcUv3DbQzzZx2bqutEOI3p7pQ3qBcZE",
-    authDomain: "inmobiliaria-milanesio-7ef00.firebaseapp.com",
-    projectId: "inmobiliaria-milanesio-7ef00",
-    storageBucket: "inmobiliaria-milanesio-7ef00.appspot.com",
-    messagingSenderId: "877270825023",
-    appId: "1:877270825023:web:7197c9d44b86a6f9f3208a",
-    measurementId: "G-GX85W67YX0"
+    apiKey: apiKey,
+    authDomain: authDomain,
+    projectId: projectId,
+    storageBucket: storageBucket,
+    messagingSenderId: messagingSenderId,
+    appId: appId,
+    measurementId: measurementId
 };
 
 const app = initializeApp(firebaseConfig);

@@ -7,10 +7,14 @@ export const Contacto = () => {
     const position = { lat: -31.44153612722259, lng: -64.11896119170974 }
     const form = useRef();
 
+    const apiEmailService = import.meta.env.VITE_EMAILJS_SERVICE
+    const apiEmailTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE
+    const apiEmailKey = import.meta.env.VITE_EMAILJS_PUBLICKEY
+
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_vq2a71e', 'template_2mmmmkj', form.current, 'AYwfJOyYlrKOo7xK6')
+        emailjs.sendForm(apiEmailService, apiEmailTemplate, form.current, apiEmailKey)
             .then(() => {
                 Swal.fire({
                     title: 'CONSULTA ENVIADA CORRECTAMENTE',

@@ -1,15 +1,17 @@
-import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps"
+import { APIProvider, Map, AdvancedMarker} from "@vis.gl/react-google-maps"
 
 export const MapGoogle = ({ position }) => {
+    const apiMapKey = import.meta.env.VITE_GoogleMapApiKey;
+    const apiMapID = import.meta.env.VITE_GoogleMapID
 
     return (
         <>
-            <APIProvider apiKey="AIzaSyBoeOmaBVCseYe9IuG2QMLUBPKZROMdZ1A">
+            <APIProvider apiKey={apiMapKey}>
                 <div className="map_container">
                     <Map
                         zoom={13}
                         center={position}
-                        mapId={"ffb4d973e19b2769"}>
+                        mapId={apiMapID}>
                         <AdvancedMarker position={position}></AdvancedMarker>
                     </Map>
                 </div>

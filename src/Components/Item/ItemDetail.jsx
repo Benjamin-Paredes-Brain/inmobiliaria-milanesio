@@ -15,6 +15,10 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
     const { itemid, estadoPropiedad } = useParams();
     const item = itemData.find((p) => p.id === itemid);
 
+    const apiEmailService = import.meta.env.VITE_EMAILJS_SERVICE
+    const apiEmailTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE2
+    const apiEmailKey = import.meta.env.VITE_EMAILJS_PUBLICKEY
+
     if (loading) return <div style={{ display: "flex" }}><Loader /></div>;
 
     const position = { lat: item.latitud, lng: item.longitud }
@@ -22,7 +26,7 @@ export const ItemDetail = withItemData(({ loading, itemData }) => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_vq2a71e', 'template_z4ircxp', form.current, 'AYwfJOyYlrKOo7xK6')
+        emailjs.sendForm(apiEmailService, apiEmailTemplate, form.current, apiEmailKey)
             .then(() => {
                 Swal.fire({
                     title: 'CONSULTA ENVIADA CORRECTAMENTE',
