@@ -155,15 +155,24 @@ export const CargarPropiedad = () => {
                         <p className='add_title_label'> Tipo de la Propiedad:</p>
                         <p className="add_subtitle_label">*Insertar en mayus</p>
                     </div>
-                    <input className='addInput' type="text" value={tipoPropiedad} onChange={(e) => setTipoPropiedad(e.target.value)} />
+                    <select className='addInput' value={tipoPropiedad} onChange={(e) => setTipoPropiedad(e.target.value)}>
+                        <option value="CASA">CASA</option>
+                        <option value="DEPARTAMENTO">DEPARTAMENTO</option>
+                        <option value="PIEZA">PIEZA</option>
+                        <option value="TERRENO">TERRENO</option>
+                        <option value="LOCAL">LOCAL</option>
+                    </select>
                 </label>
                 <br />
                 <label className='addLabel'>
                     <div className='addLabel_txt'>
                         <p className='add_title_label'>Estado de la Propiedad:</p>
-                        <p className="add_subtitle_label">*Insertar en mayus, (VENTA / ALQUILER)</p>
+                        <p className="add_subtitle_label">*(VENTA / ALQUILER)</p>
                     </div>
-                    <input className='addInput' type="text" value={estadoPropiedad} onChange={(e) => setEstadoPropiedad(e.target.value)} />
+                    <select className='addInput' value={estadoPropiedad} onChange={(e) => setEstadoPropiedad(e.target.value)}>
+                        <option value="VENTA">VENTA</option>
+                        <option value="ALQUILER">ALQUILER</option>
+                    </select>
                 </label>
                 <br />
                 <label className='addLabel imgLabel'>
@@ -224,9 +233,12 @@ export const CargarPropiedad = () => {
                 <label className='addLabel'>
                     <div className='addLabel_txt'>
                         <p className='add_title_label'>Garage de la Propiedad:</p>
-                        <p className="add_subtitle_label">*Insertar si/no, en mayus</p>
+                        <p className="add_subtitle_label">*si/no</p>
                     </div>
-                    <input className='addInput' type="text" value={garagePropiedad} onChange={(e) => setGaragePropiedad(e.target.value)} />
+                    <select className='addInput' value={garagePropiedad} onChange={(e) => setGaragePropiedad(e.target.value)}>
+                        <option value="SI">SI</option>
+                        <option value="NO">NO</option>
+                    </select>
                 </label>
                 <br />
                 <label className='addLabel'>
